@@ -1,40 +1,101 @@
-<!--
-============================================================
-Página de INICIO · Sabores de la Plaza
-Ejercicios 01, 02, 03, 07 y 08
-============================================================
-Sabores de la Plaza es un colectivo de puestos de una plaza de
-mercado: fruteros, panadería, almuerzos, jugos naturales y café.
-Quieren un sitio de tres páginas: index.html (esta), puestos.html
-y contacto.html. Escribe tu HTML DEBAJO de este comentario.
-Todo con Bootstrap: nada de JavaScript propio.
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sabores de la Plaza - Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">Sabores de la Plaza</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="puestos.html">Puestos</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-Ejercicio 01 · Bootstrap instalado (en las TRES páginas)
-  - El esqueleto de siempre, con el <meta name="viewport">.
-  - En el <head>: el CSS de Bootstrap 5 (cópialo de la documentación)
-    y DESPUÉS tu <link href="styles.css" rel="stylesheet">.
-  - Al final del <body>: el <script> de bootstrap.bundle.min.js.
+<main class="container my-5">
+  <section class="hero text-center py-5">
+    <h1>Sabores de la Plaza</h1>
+    <p class="lead">Frutas, pan, almuerzos, jugos naturales y café de tu mercado.</p>
+    <a href="puestos.html" class="btn btn-primary btn-lg">Ver puestos</a>
+  </section>
 
-Ejercicio 02 · Barra de navegación (idéntica en las TRES páginas)
-  - Una navbar con navbar-expand-lg, la marca "Sabores de la Plaza"
-    (clase navbar-brand) y el botón navbar-toggler para el celular.
-  - El data-bs-target del botón apunta al id del div collapse.
-  - Enlaces a index.html, puestos.html y contacto.html.
+  <section class="row g-4">
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Fresco</h5>
+          <p class="card-text">Productos del día directamente del campo.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Local</h5>
+          <p class="card-text">Apoyamos a los productores de la zona.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Hecho a mano</h5>
+          <p class="card-text">Panadería y almuerzos preparados con cariño.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Natural</h5>
+          <p class="card-text">Jugos naturales y café de grano.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-Ejercicio 03 · La bienvenida (solo en esta página)
-  - Un banner (hero) con el único <h1> de esta página, una frase y un
-    botón (clase btn) que lleve a puestos.html o a contacto.html.
-  - Una fila con 3 o 4 bloques de presentación (fresco, local,
-    hecho a mano…): uno debajo del otro en el celular y todos en
-    una sola fila en el computador.
-  - Un <footer> con los datos del colectivo.
+  <section class="my-5">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/frutas.svg" class="d-block w-100" alt="Frutas frescas del mercado">
+        </div>
+        <div class="carousel-item">
+          <img src="img/pan.svg" class="d-block w-100" alt="Pan recién horneado">
+        </div>
+        <div class="carousel-item">
+          <img src="img/cafe.svg" class="d-block w-100" alt="Café de grano">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </section>
+</main>
 
-Ejercicio 07 · El carrusel (aquí o en puestos.html)
-  - El cliente quiere "fotos que pasen solas". Búscalo en
-    Components → Carousel. Al menos 3 fotos, cada una con alt.
-  - En plaza/img/ tienes 3 imágenes listas para usar.
+<footer class="bg-dark text-white text-center py-4">
+  <p class="mb-0">Sabores de la Plaza · Colectivo de puestos de mercado · Fruteros, panadería, almuerzos, jugos y café.</p>
+</footer>
 
-Ejercicio 08 · La letra (en las TRES páginas)
-  - El <link> de Google Fonts con tu fuente, en el <head>.
-============================================================
--->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  </body>
+</html>
